@@ -1305,6 +1305,18 @@ a {
     background: #f9f9f9;
 }
 
+.own-mark {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #000000;
+    opacity: 0.7;
+    pointer-events: none;
+    z-index: 10;
+}
+
 .mb-short {
     max-height: 400px;
     overflow: hidden;
