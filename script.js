@@ -135,48 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 3. About Page: Research Index Interaction
-    const aboutIndexItems = document.querySelectorAll('.about-index-item');
-    const aboutDetailKicker = document.getElementById('about-detail-kicker');
-    const aboutDetailTitle = document.getElementById('about-detail-title');
-    const aboutDetailSubtitle = document.getElementById('about-detail-subtitle');
-    const aboutDetailBody = document.getElementById('about-detail-body');
-    const aboutDetailPanel = document.getElementById('about-detail-panel');
-    const aboutDetailClose = document.getElementById('about-detail-panel-close');
-
-    if (aboutIndexItems.length) {
-        const setActiveEntry = (button) => {
-            aboutIndexItems.forEach(item => item.classList.remove('is-active'));
-            button.classList.add('is-active');
-
-            const kicker = button.dataset.kicker || '';
-            const title = button.dataset.title || '';
-            const subtitle = button.dataset.subtitle || '';
-            const body = button.dataset.body || '';
-
-            if (aboutDetailKicker) aboutDetailKicker.textContent = kicker;
-            if (aboutDetailTitle) aboutDetailTitle.textContent = title;
-            if (aboutDetailSubtitle) aboutDetailSubtitle.textContent = subtitle;
-            if (aboutDetailBody) {
-                const paragraphs = body.split('|').filter(Boolean);
-                aboutDetailBody.innerHTML = paragraphs.map(paragraph => `<p>${paragraph}</p>`).join('');
-            }
-            if (aboutDetailPanel) aboutDetailPanel.classList.add('is-open');
-        };
-
-        aboutIndexItems.forEach(button => {
-            button.addEventListener('click', () => setActiveEntry(button));
-        });
-
-        if (aboutDetailClose) {
-            aboutDetailClose.addEventListener('click', () => {
-                aboutIndexItems.forEach(item => item.classList.remove('is-active'));
-                if (aboutDetailPanel) aboutDetailPanel.classList.remove('is-open');
-            });
-        }
-    }
-
-    // 4. Grid & Moodboard Video: Play-on-Hover (Global)
+    // 3. Grid & Moodboard Video: Play-on-Hover (Global)
     const gridVideos = document.querySelectorAll('.moodboard-item video, .neutral-media-tile video');
     gridVideos.forEach(v => {
         const container = v.closest('.moodboard-item') || v.closest('.neutral-media-tile');
