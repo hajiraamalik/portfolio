@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let idleTimer = null;
         const SUB_INDEX_CLOSE_MS = 420;
         const IDLE_TIMEOUT_MS = 30000;
+        const projectNumerals = ['(i)', '(ii)', '(iii)', '(iv)', '(v)', '(vi)', '(vii)'];
 
         function resetIdleTimer() {
             clearTimeout(idleTimer);
@@ -265,7 +266,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
         
                     const fullTitle = titleEl.textContent.replace(/\s+/g, ' ').trim();
-                    const shortTitle = titleEl.getAttribute('data-index-title') || fullTitle;
+                    const titleForIndex = titleEl.getAttribute('data-index-title') || fullTitle;
+                    const shortTitle = titleForIndex.match(/^\([ivx]+\)\s/i)
+                        ? titleForIndex
+                        : `${projectNumerals[index] || `(${index + 1})`} ${titleForIndex}`;
         
                     renderProjectItem(
                         fullTitle,
