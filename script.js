@@ -20,25 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
         let activePanel = null;
         let hoverTarget = null;
         let subIndexOpen = false;
-        let idleTimer = null;
         const SUB_INDEX_CLOSE_MS = 420;
-        const IDLE_TIMEOUT_MS = 30000;
         const projectNumerals = ['(i)', '(ii)', '(iii)', '(iv)', '(v)', '(vi)', '(vii)'];
 
         function resetIdleTimer() {
-            clearTimeout(idleTimer);
-            idleTimer = setTimeout(() => {
-                if (isAboutPage && (detailPanel?.classList.contains('is-open') || subIndexOpen)) {
-                    closeSubIndex();
-                    closePanel();
-                }
-            }, IDLE_TIMEOUT_MS);
+            // Intentionally left blank: auto-closing on inactivity is disabled.
         }
-
-        ['mousemove', 'mousedown', 'keydown', 'touchstart', 'scroll', 'wheel'].forEach(evt => {
-            window.addEventListener(evt, resetIdleTimer, { passive: true });
-        });
-        resetIdleTimer();
 
         function clearHoverClasses() {
             document.querySelectorAll('.index-item, .index-project-name').forEach(el => {
@@ -77,7 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
             subIndex.classList.add('is-open');
             subIndex.setAttribute('aria-hidden', 'false');
             if (projectsBtn) projectsBtn.classList.add('is-selected');
-            resetIdleTimer();
         }
 
         function closeSubIndex(callback, instant = false) {
@@ -148,7 +134,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             initPanelVideos();
-            resetIdleTimer();
         }
 
         function closePanel() {

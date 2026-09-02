@@ -1314,7 +1314,7 @@ a {
     font-family: "Noto Nastaliq Urdu", "Jameel Noori Nastaleeq", "Scheherazade New", serif;
     font-size: clamp(1.1rem, 2vw, 2rem);
     line-height: 1.8;
-    color: #000;
+    color: #fe002;
 }
 
 .seedbank-urdu-copy p {
