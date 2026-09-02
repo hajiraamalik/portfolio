@@ -444,10 +444,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!video) return;
 
             video.muted = false;
+            video.volume = 0.2;
             video.preload = 'metadata';
 
             videoBlock.addEventListener('mouseenter', () => {
                 video.muted = false;
+                video.volume = 0.2;
                 video.play().catch(e => console.log("Auto-play blocked", e));
             });
 
