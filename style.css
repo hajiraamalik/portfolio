@@ -1300,6 +1300,7 @@ a {
 .seedbank-video-stack .seedbank-audio-video {
     max-width: 760px;
     min-height: 430px;
+    volume: 0.5;
 }
 
 .seedbank-audio-video video {
