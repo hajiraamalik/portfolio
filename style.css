@@ -1264,6 +1264,50 @@ a {
     margin: 0 auto;
  }
 
+.seedbank-video-stack {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    width: min(100%, 620px);
+    margin: 0 auto;
+}
+
+.seedbank-video-stack .about-video-block {
+    width: 100%;
+    max-width: 620px;
+    min-height: 360px;
+}
+
+.seedbank-video-stack .about-video-block:first-child {
+    max-width: 500px;
+}
+
+.seedbank-video-stack .seedbank-audio-video {
+    max-width: 760px;
+    min-height: 430px;
+}
+
+.seedbank-audio-video video {
+    object-fit: cover;
+}
+
+.seedbank-urdu-copy {
+    width: 100%;
+    max-width: 760px;
+    text-align: right;
+    direction: rtl;
+    font-family: "Noto Nastaliq Urdu", "Jameel Noori Nastaleeq", "Scheherazade New", serif;
+    font-size: clamp(1.1rem, 2vw, 2rem);
+    line-height: 1.8;
+    color: #000;
+}
+
+.seedbank-urdu-copy p {
+    margin: 0;
+}
+
 .about-video-block video {
     position: absolute;
     width: 100%;

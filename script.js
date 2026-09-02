@@ -454,11 +454,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Video Play-on-Hover (about panel)
-        const videoBlock = document.querySelector('.about-video-block');
-        const video = videoBlock ? videoBlock.querySelector('video') : null;
+        document.querySelectorAll('.about-video-block[data-sound="true"]').forEach((videoBlock) => {
+            const video = videoBlock.querySelector('video');
+            if (!video) return;
 
-        if (videoBlock && video) {
+            video.muted = false;
+            video.preload = 'metadata';
+
             videoBlock.addEventListener('mouseenter', () => {
+                video.muted = false;
                 video.play().catch(e => console.log("Auto-play blocked", e));
             });
 
@@ -466,7 +470,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 video.pause();
                 video.currentTime = 0;
             });
-        }
+        });
 
         // Moodboard Lightbox Viewer
         function setupLightbox() {
