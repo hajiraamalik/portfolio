@@ -1331,6 +1331,7 @@ a {
 }
 
 .chai-english {
+    direction: ltr;
     text-align: left;
 }
 
@@ -1446,8 +1447,12 @@ a {
 
     .chai-translations {
         grid-template-columns: 1fr;
-        width: min(100% - 32px, 400px);
+        width: min(60%, 400px);
         gap: 24px;
+    }
+
+    .detail-panel-content[data-panel="chai"] .about-video-block {
+        width: min(60%, 400px);
     }
 
     .chai-translations .seedbank-urdu-copy {
