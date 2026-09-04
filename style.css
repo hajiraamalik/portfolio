@@ -509,6 +509,19 @@ a {
     overflow: hidden;
 }
 
+.thesis-concept-media {
+    min-width: 0;
+    overflow: hidden;
+}
+
+.thesis-concept-media img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
 
 /* Typography & Details */
 .neutral-project-title {
@@ -555,6 +568,10 @@ a {
 
     .neutral-media-grid-container {
         grid-template-columns: 8px 1fr 8px;
+    }
+
+    .thesis-concept-media {
+        grid-column: 2 !important;
     }
 }
 
