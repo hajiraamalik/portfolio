@@ -514,6 +514,10 @@ a {
     overflow: hidden;
 }
 
+.thesis-concept-media .neutral-media-tile {
+    min-width: 0;
+}
+
 .thesis-concept-media img {
     display: block;
     width: 100%;
