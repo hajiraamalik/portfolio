@@ -17,3 +17,4 @@ This is a simple, premium portfolio website built with HTML, CSS, and JavaScript
 
 -   **Images**: Replace the gray placeholders in the `index.html` with your actual images. Look for `<div class="placeholder-img">` or `<div class="placeholder-project">` and replace them with `<img>` tags.
 -   **Colors**: You can change the colors in `style.css` under the `:root` section.
+
